@@ -84,16 +84,15 @@ const browser = {
     const isOpera = typeof window.opr !== "undefined";
     const isIEedge = winNav.userAgent.indexOf("Edge") > -1;
     const isIOSChrome = winNav.userAgent.match("CriOS");
-    const isElectron = winNav.userAgent.match("electron");
+    const isElectron = winNav.userAgent.match("Electron");
     return (
       (isChromium !== null &&
         typeof isChromium !== "undefined" &&
         vendorName === "Google Inc." &&
         isOpera === false &&
         isIEedge === false) ||
-      isIOSChrome ||
-      isElectron
-    );
+      isIOSChrome
+    ) || isElectron;
   },
 
   isOpera: function() {
